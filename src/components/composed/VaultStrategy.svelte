@@ -54,13 +54,13 @@
     on:mouseenter="{() => (isHovered = true)}"
     on:mouseleave="{() => (isHovered = false)}"
   >
-    <div class="absolute -left-2 top-8">
+    <div class="absolute -left-3 flex items-center md:block top-0 h-full md:h-auto md:top-10 lg:-left-2 lg:top-8">
       <div class="flex justify-center items-center w-6">
         <Button
           borderColor="bronze3"
           selected="{isHovered}"
           borderSize="1"
-          fontSize="text-md"
+          fontSize="text-base"
           py="py-0"
           label="{isExpanded ? '-' : '+'}"
           on:clicked="{() => toggleExpanded()}"
@@ -71,7 +71,7 @@
       class="w-full grid grid-cols-12 justify-between items-center hover:cursor-pointer"
       on:click="{() => toggleExpanded()}"
     >
-      <div class="col-span-3">
+      <div class="col-span-6 md:col-span-3">
         <FarmNameCell
           farmIcon="{strategy.col2.farmIcon}"
           farmName="{strategy.col2.farmName}"
@@ -81,16 +81,16 @@
           isHalted="{false}"
         />
       </div>
-      <div class="col-span-2">
-        <p class="text-center text-sm text-lightgrey10">Deposit</p>
+      <div class="col-span-3 md:col-span-2">
+        <p class="text-center text-xs text-xs lg:text-sm text-lightgrey10">Deposit</p>
         <CurrencyCell value="{strategy.deposited.value}" token="{strategy.deposited.token}" />
       </div>
-      <div class="col-span-2">
-        <p class="text-center text-sm text-lightgrey10">TVL</p>
+      <div class="col-span-3 md:col-span-2">
+        <p class="text-center text-xs lg:text-sm text-lightgrey10">TVL</p>
         <CurrencyCell value="{strategy.col3.value}" token="{strategy.col3.token}" />
       </div>
-      <div class="flex flex-col px-8 col-span-3">
-        <p class="text-center text-sm text-lightgrey10">Utilization</p>
+      <div class="flex flex-col px-8 col-span-6 md:col-span-3">
+        <p class=" text-center text-xs lg:text-sm text-lightgrey10">Utilization</p>
         <VaultCapacityCell
           vaultType="{strategy.limit.vaultType}"
           signer="{strategy.limit.signer}"
@@ -102,12 +102,12 @@
           bind:capInfo="{_capInfo}"
         />
       </div>
-      <div class="self-start col-span-1">
-        <p class="text-center text-sm text-lightgrey10">LTV</p>
+      <div class="self-start col-span-3 md:col-span-1 flex items-center flex-col justify-center h-full">
+        <p class="text-center text-xs lg:text-sm text-lightgrey10">LTV</p>
         <YieldCell yieldRate="{ltv}" yieldType="" />
       </div>
-      <div class="self-start col-span-1">
-        <p class="text-center text-sm text-lightgrey10">{strategy.col4.yieldType}</p>
+      <div class="self-start col-span-3 md:col-span-1 flex items-center flex-col justify-center h-full">
+        <p class="text-center text-xs lg:text-sm text-lightgrey10">{strategy.col4.yieldType}</p>
         <YieldCell yieldRate="{strategy.col4.yieldRate}" yieldType="" />
       </div>
     </div>
