@@ -477,7 +477,6 @@
               currentStrategy = TypeOfStrategies.USED;
             }}"
           />
-          
 
           <Button
             label="{$_('table.all_strategies_select')} ({countStrategiesForTypeOfStrategy(
